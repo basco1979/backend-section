@@ -7,7 +7,7 @@ class UserRepository extends BaseRepository {
     _user = User;
   }
 
-  async getUserByUsername(username) {
+  async getUserByUserName(username) {
     return await _user.findOne({ username });
   }
 }
