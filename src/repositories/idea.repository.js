@@ -6,8 +6,7 @@ class IdeaRepository extends BaseRepository {
     super(Idea);
     _idea = Idea;
   }
-
-  async getIdeaByAuthor(author) {
+  async getUserIdeas(author) {
     return await _idea.find({ author });
   }
 }

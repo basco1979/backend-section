@@ -7,14 +7,15 @@ class IdeaService extends BaseService {
     _ideaRepository = IdeaRepository;
   }
 
-  async getIdeaByAuthor(author) {
+  async getUserIdeas(author) {
     if (!author) {
       const error = new Error();
       error.status = 400;
-      error.message = "author must be sent";
+      error.message = "userId must be sent";
       throw error;
     }
-    return await _ideaRepository.getIdeaByAuthor(author);
+
+    return await _ideaRepository.getUserIdeas(author);
   }
 
   async upvoteIdea(ideaId) {

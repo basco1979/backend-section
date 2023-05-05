@@ -34,10 +34,9 @@ class IdeaController {
     const deleteIdea = await _ideaService.delete(ideaId);
     return res.send(deleteIdea);
   }
-
-  async getIdeaByAuthor(req, res) {
-    const { userId } = req.parms;
-    const ideas = await _ideaService.getIdeaByAuthor(userId);
+  async getUserIdeas(req, res) {
+    const { userId } = req.params;
+    const ideas = await _ideaService.getUserIdeas(userId);
     return res.send(ideas);
   }
   async upvoteIdea(req, res) {
